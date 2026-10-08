@@ -1,0 +1,7 @@
+---
+import StoryblokRichText from '@storyblok/astro/StoryblokRichText.astro';
+import type { StoryblokRichTextInput } from '@storyblok/astro';
+interface Props { document?: StoryblokRichTextInput; }
+const { document } = Astro.props;
+---
+{document && <div class="prose"><StoryblokRichText document={document} /></div>}

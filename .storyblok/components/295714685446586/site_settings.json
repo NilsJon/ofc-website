@@ -1,0 +1,52 @@
+{
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": true,
+  "is_nestable": false,
+  "name": "site_settings",
+  "display_name": "Besöksinformation",
+  "schema": {
+    "site_name": {
+      "type": "text",
+      "display_name": "Namn",
+      "pos": 0
+    },
+    "address": {
+      "type": "text",
+      "required": true,
+      "display_name": "Adress",
+      "pos": 1
+    },
+    "email": {
+      "type": "text",
+      "display_name": "E-post",
+      "pos": 2
+    },
+    "phone": {
+      "type": "text",
+      "display_name": "Telefon",
+      "pos": 3
+    },
+    "opening_hours": {
+      "type": "textarea",
+      "display_name": "Öppettider",
+      "pos": 4
+    },
+    "map_url": {
+      "type": "text",
+      "display_name": "Kartlänk",
+      "pos": 5
+    },
+    "instagram_url": {
+      "type": "text",
+      "display_name": "Instagramlänk",
+      "pos": 6
+    },
+    "announcement": {
+      "type": "textarea",
+      "display_name": "Meddelande (valfritt)",
+      "pos": 7
+    }
+  }
+}

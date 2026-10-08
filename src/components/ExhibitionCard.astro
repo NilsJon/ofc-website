@@ -1,0 +1,16 @@
+---
+import { formatDateRange, imageSrcset, imageUrl, type CmsStory, type Exhibition } from '../lib/content';
+interface Props { story: CmsStory<Exhibition>; label?: string; }
+const { story, label } = Astro.props;
+const { content } = story;
+const href = `/utstallningar/${story.slug}/`;
+const src = imageUrl(content.hero_image, 800);
+---
+<article class="exhibition-card" data-storyblok-id={content._uid}>
+  <a href={href} class="card-image-link" aria-label={`Läs om ${content.title}`}>
+    {src ? <img src={src} srcset={imageSrcset(content.hero_image)} sizes="(max-width: 700px) 100vw, 45vw" width={content.hero_image?.width ?? 800} height={content.hero_image?.height ?? 600} alt={content.hero_image?.alt ?? ''} loading="lazy" /> : <span class="image-unavailable">Bild kommer</span>}
+  </a>
+  <div class="card-meta"><span>{label ?? content.artists ?? 'Utställning'}</span><span>{formatDateRange(content.start_date, content.end_date) ?? 'Datum saknas'}</span></div>
+  <h3><a href={href}>{content.title}</a></h3>
+  {content.artists && label && <p>{content.artists}</p>}
+</article>

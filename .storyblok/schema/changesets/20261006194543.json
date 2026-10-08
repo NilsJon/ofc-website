@@ -1,0 +1,548 @@
+{
+  "timestamp": "2026-10-06T19:45:43.938Z",
+  "spaceId": 295714685446586,
+  "remote": {
+    "components": [
+      {
+        "name": "about",
+        "display_name": "Om ÖFC",
+        "description": "",
+        "created_at": "2026-10-06T19:42:13.696Z",
+        "updated_at": "2026-10-06T19:42:13.696Z",
+        "id": 227844643623806,
+        "schema": {
+          "introduction": {
+            "type": "textarea",
+            "display_name": "Introduktion",
+            "pos": 0,
+            "id": "QgGysaQ8T2S1r1i05YfiKA"
+          },
+          "background": {
+            "type": "richtext",
+            "display_name": "Om fotograficentrumet",
+            "pos": 1,
+            "id": "c9irpoufTeWsaW1So_b21w"
+          },
+          "building": {
+            "type": "richtext",
+            "display_name": "Om Sädesmagasinet",
+            "pos": 2,
+            "id": "O_4xpbLRQYGXE2WnqTWDjA"
+          },
+          "image": {
+            "type": "asset",
+            "filetypes": [
+              "images"
+            ],
+            "display_name": "Bild av magasinet",
+            "pos": 3,
+            "id": "XIeJLydEQZeN8C3xOfzohA"
+          }
+        },
+        "image": null,
+        "preview_field": "",
+        "is_root": true,
+        "preview_tmpl": null,
+        "is_nestable": false,
+        "all_presets": [],
+        "preset_id": null,
+        "real_name": "Om ÖFC",
+        "component_group_uuid": null,
+        "color": "",
+        "icon": "",
+        "internal_tags_list": [],
+        "internal_tag_ids": [],
+        "content_type_asset_preview": null,
+        "metadata": {}
+      },
+      {
+        "name": "archive_entry",
+        "display_name": "Äldre utställare",
+        "description": "",
+        "created_at": "2026-10-06T19:42:13.701Z",
+        "updated_at": "2026-10-06T19:42:13.701Z",
+        "id": 227844643644287,
+        "schema": {
+          "artist": {
+            "type": "text",
+            "required": true,
+            "display_name": "Utställare",
+            "pos": 0,
+            "id": "_8tOmD1vQ0CKKAEhxAzrHA"
+          },
+          "title": {
+            "type": "text",
+            "display_name": "Utställningens titel (om känd)",
+            "pos": 1,
+            "id": "fkp9m6fMRPSsWrTfcMYuwA"
+          },
+          "year": {
+            "type": "text",
+            "display_name": "År (om känt)",
+            "pos": 2,
+            "id": "f_a8jd9uSJe7Nt0zXl-JhA"
+          },
+          "image": {
+            "type": "asset",
+            "filetypes": [
+              "images"
+            ],
+            "display_name": "Bild (om tillgänglig)",
+            "pos": 3,
+            "id": "xcMS3bvUS_ifXoEsI03VGw"
+          }
+        },
+        "image": null,
+        "preview_field": "",
+        "is_root": true,
+        "preview_tmpl": null,
+        "is_nestable": false,
+        "all_presets": [],
+        "preset_id": null,
+        "real_name": "Äldre utställare",
+        "component_group_uuid": null,
+        "color": "",
+        "icon": "",
+        "internal_tags_list": [],
+        "internal_tag_ids": [],
+        "content_type_asset_preview": null,
+        "metadata": {}
+      },
+      {
+        "name": "exhibition",
+        "display_name": "Utställning",
+        "description": "",
+        "created_at": "2026-10-06T19:42:14.519Z",
+        "updated_at": "2026-10-06T19:42:14.519Z",
+        "id": 227844646994816,
+        "schema": {
+          "title": {
+            "type": "text",
+            "required": true,
+            "display_name": "Utställningens titel",
+            "pos": 0,
+            "id": "AJfjLTw0QrenzKop9YHapQ"
+          },
+          "artists": {
+            "type": "text",
+            "required": true,
+            "display_name": "Fotograf(er) / konstnär(er)",
+            "pos": 1,
+            "id": "jP8k6o29Sbu1LAKazuHNIw"
+          },
+          "start_date": {
+            "type": "datetime",
+            "required": true,
+            "display_name": "Startdatum",
+            "pos": 2,
+            "id": "Xm3U8fJxR72crZgmyblNKQ"
+          },
+          "end_date": {
+            "type": "datetime",
+            "required": true,
+            "display_name": "Slutdatum",
+            "pos": 3,
+            "id": "brv8DahhQDaqgdbfltulog"
+          },
+          "opening_date": {
+            "type": "datetime",
+            "display_name": "Vernissage (valfritt)",
+            "pos": 4,
+            "id": "mwh2dtnHQMGydRa2YecFCQ"
+          },
+          "summary": {
+            "type": "textarea",
+            "display_name": "Kort introduktion",
+            "pos": 5,
+            "id": "lBloY43YTOKKwvcAidKN9g"
+          },
+          "body": {
+            "type": "richtext",
+            "display_name": "Om utställningen",
+            "pos": 6,
+            "id": "7DHxeCrJR4-VK1PqEPjKUw"
+          },
+          "hero_image": {
+            "type": "asset",
+            "filetypes": [
+              "images"
+            ],
+            "display_name": "Huvudbild",
+            "pos": 7,
+            "id": "6LdO4SohTUO1LI5h5NzE7A"
+          },
+          "image_credit": {
+            "type": "text",
+            "display_name": "Fotograf / bildrättighet för huvudbild",
+            "pos": 8,
+            "id": "azobfNfMTX6c_VsfrPZMqw"
+          },
+          "gallery": {
+            "type": "bloks",
+            "display_name": "Fler bilder",
+            "pos": 9,
+            "component_whitelist": [
+              "gallery_image"
+            ],
+            "restrict_components": true,
+            "restrict_type": "",
+            "id": "b4pB00xhTy6FXbjgBnh-3g"
+          },
+          "external_url": {
+            "type": "text",
+            "display_name": "Extern länk (valfritt)",
+            "pos": 10,
+            "id": "BF8aqJKvSn6RImAo3QAc4g"
+          }
+        },
+        "image": null,
+        "preview_field": "",
+        "is_root": true,
+        "preview_tmpl": null,
+        "is_nestable": false,
+        "all_presets": [],
+        "preset_id": null,
+        "real_name": "Utställning",
+        "component_group_uuid": null,
+        "color": "",
+        "icon": "",
+        "internal_tags_list": [],
+        "internal_tag_ids": [],
+        "content_type_asset_preview": null,
+        "metadata": {}
+      },
+      {
+        "name": "feature",
+        "display_name": null,
+        "description": null,
+        "created_at": "2026-10-06T19:04:22.295Z",
+        "updated_at": "2026-10-06T19:04:22.295Z",
+        "id": 227835339960798,
+        "schema": {
+          "name": {
+            "type": "text",
+            "id": "se2F1gxaTquGbn11EPb9kQ"
+          }
+        },
+        "image": null,
+        "preview_field": null,
+        "is_root": false,
+        "preview_tmpl": null,
+        "is_nestable": true,
+        "all_presets": [],
+        "preset_id": null,
+        "real_name": "feature",
+        "component_group_uuid": null,
+        "color": null,
+        "icon": null,
+        "internal_tags_list": [],
+        "internal_tag_ids": [],
+        "content_type_asset_preview": null,
+        "metadata": {}
+      },
+      {
+        "name": "gallery_image",
+        "display_name": "Bild i galleri",
+        "description": "",
+        "created_at": "2026-10-06T19:42:14.521Z",
+        "updated_at": "2026-10-06T19:42:14.521Z",
+        "id": 227844647003009,
+        "schema": {
+          "image": {
+            "type": "asset",
+            "filetypes": [
+              "images"
+            ],
+            "required": true,
+            "display_name": "Bild",
+            "pos": 0,
+            "id": "iFmMbJs-SeOzIcfU7feQKw"
+          },
+          "caption": {
+            "type": "text",
+            "display_name": "Bildtext",
+            "pos": 1,
+            "id": "UV6Gjv3wQy6YuWH-S0CIAg"
+          },
+          "credit": {
+            "type": "text",
+            "display_name": "Fotograf / bildrättighet",
+            "pos": 2,
+            "id": "lrsf45-xSgKcGrXJyzgGKQ"
+          }
+        },
+        "image": null,
+        "preview_field": "",
+        "is_root": false,
+        "preview_tmpl": null,
+        "is_nestable": true,
+        "all_presets": [],
+        "preset_id": null,
+        "real_name": "Bild i galleri",
+        "component_group_uuid": null,
+        "color": "",
+        "icon": "",
+        "internal_tags_list": [],
+        "internal_tag_ids": [],
+        "content_type_asset_preview": null,
+        "metadata": {}
+      },
+      {
+        "name": "grid",
+        "display_name": null,
+        "description": null,
+        "created_at": "2026-10-06T19:04:22.283Z",
+        "updated_at": "2026-10-06T19:04:22.283Z",
+        "id": 227835339915741,
+        "schema": {
+          "columns": {
+            "type": "bloks",
+            "id": "qF3EmszWQg6_WBvUAhyMeA"
+          }
+        },
+        "image": null,
+        "preview_field": null,
+        "is_root": false,
+        "preview_tmpl": null,
+        "is_nestable": true,
+        "all_presets": [],
+        "preset_id": null,
+        "real_name": "grid",
+        "component_group_uuid": null,
+        "color": null,
+        "icon": null,
+        "internal_tags_list": [],
+        "internal_tag_ids": [],
+        "content_type_asset_preview": null,
+        "metadata": {}
+      },
+      {
+        "name": "home",
+        "display_name": "Startsida",
+        "description": "",
+        "created_at": "2026-10-06T19:42:14.541Z",
+        "updated_at": "2026-10-06T19:42:14.541Z",
+        "id": 227844647084931,
+        "schema": {
+          "introduction": {
+            "type": "textarea",
+            "display_name": "Kort text om ÖFC",
+            "pos": 0,
+            "id": "5IBrlWKMSA2i4uMxo0EKwg"
+          }
+        },
+        "image": null,
+        "preview_field": "",
+        "is_root": true,
+        "preview_tmpl": null,
+        "is_nestable": false,
+        "all_presets": [],
+        "preset_id": null,
+        "real_name": "Startsida",
+        "component_group_uuid": null,
+        "color": "",
+        "icon": "",
+        "internal_tags_list": [],
+        "internal_tag_ids": [],
+        "content_type_asset_preview": null,
+        "metadata": {}
+      },
+      {
+        "name": "page",
+        "display_name": null,
+        "description": null,
+        "created_at": "2026-10-06T19:04:22.261Z",
+        "updated_at": "2026-10-06T19:04:22.261Z",
+        "id": 227835339825627,
+        "schema": {
+          "body": {
+            "type": "bloks",
+            "id": "vspIC-IsQs63_89CK9nVvQ"
+          }
+        },
+        "image": null,
+        "preview_field": null,
+        "is_root": true,
+        "preview_tmpl": null,
+        "is_nestable": false,
+        "all_presets": [],
+        "preset_id": null,
+        "real_name": "page",
+        "component_group_uuid": null,
+        "color": null,
+        "icon": null,
+        "internal_tags_list": [],
+        "internal_tag_ids": [],
+        "content_type_asset_preview": null,
+        "metadata": {}
+      },
+      {
+        "name": "site_settings",
+        "display_name": "Besöksinformation",
+        "description": "",
+        "created_at": "2026-10-06T19:42:14.523Z",
+        "updated_at": "2026-10-06T19:42:14.523Z",
+        "id": 227844647011202,
+        "schema": {
+          "site_name": {
+            "type": "text",
+            "display_name": "Namn",
+            "pos": 0,
+            "id": "SYaT5jfeTKe-csXDuIgAOQ"
+          },
+          "address": {
+            "type": "text",
+            "required": true,
+            "display_name": "Adress",
+            "pos": 1,
+            "id": "DGKEei12SeG6joV-kXvfsg"
+          },
+          "email": {
+            "type": "text",
+            "display_name": "E-post",
+            "pos": 2,
+            "id": "qpBvBdRQRnmvCwIyDIpMQQ"
+          },
+          "phone": {
+            "type": "text",
+            "display_name": "Telefon",
+            "pos": 3,
+            "id": "eVbj_LGPTOufLaKJBGC76w"
+          },
+          "opening_hours": {
+            "type": "textarea",
+            "display_name": "Öppettider",
+            "pos": 4,
+            "id": "xGp42WLQSd-yHdbzizPQ_Q"
+          },
+          "map_url": {
+            "type": "text",
+            "display_name": "Kartlänk",
+            "pos": 5,
+            "id": "I2-jwb-iRaSG8crT83Kqpg"
+          },
+          "instagram_url": {
+            "type": "text",
+            "display_name": "Instagramlänk",
+            "pos": 6,
+            "id": "6MffzSkWTn6XmYJx4d-Hrg"
+          },
+          "announcement": {
+            "type": "textarea",
+            "display_name": "Meddelande (valfritt)",
+            "pos": 7,
+            "id": "xZbE9YDRRhW3J3x6YWnrrA"
+          }
+        },
+        "image": null,
+        "preview_field": "",
+        "is_root": true,
+        "preview_tmpl": null,
+        "is_nestable": false,
+        "all_presets": [],
+        "preset_id": null,
+        "real_name": "Besöksinformation",
+        "component_group_uuid": null,
+        "color": "",
+        "icon": "",
+        "internal_tags_list": [],
+        "internal_tag_ids": [],
+        "content_type_asset_preview": null,
+        "metadata": {}
+      },
+      {
+        "name": "teaser",
+        "display_name": null,
+        "description": null,
+        "created_at": "2026-10-06T19:04:22.272Z",
+        "updated_at": "2026-10-06T19:04:22.272Z",
+        "id": 227835339870684,
+        "schema": {
+          "headline": {
+            "type": "text",
+            "id": "Th5ZqThwRIyyrZ9PeugZ7A"
+          }
+        },
+        "image": null,
+        "preview_field": null,
+        "is_root": false,
+        "preview_tmpl": null,
+        "is_nestable": true,
+        "all_presets": [],
+        "preset_id": null,
+        "real_name": "teaser",
+        "component_group_uuid": null,
+        "color": null,
+        "icon": null,
+        "internal_tags_list": [],
+        "internal_tag_ids": [],
+        "content_type_asset_preview": null,
+        "metadata": {}
+      }
+    ],
+    "componentFolders": [],
+    "datasources": []
+  },
+  "changes": [
+    {
+      "type": "component",
+      "name": "home",
+      "action": "update",
+      "before": {
+        "name": "home",
+        "display_name": "Startsida",
+        "description": "",
+        "created_at": "2026-10-06T19:42:14.541Z",
+        "updated_at": "2026-10-06T19:42:14.541Z",
+        "id": 227844647084931,
+        "schema": {
+          "introduction": {
+            "type": "textarea",
+            "display_name": "Kort text om ÖFC",
+            "pos": 0,
+            "id": "5IBrlWKMSA2i4uMxo0EKwg"
+          }
+        },
+        "image": null,
+        "preview_field": "",
+        "is_root": true,
+        "preview_tmpl": null,
+        "is_nestable": false,
+        "all_presets": [],
+        "preset_id": null,
+        "real_name": "Startsida",
+        "component_group_uuid": null,
+        "color": "",
+        "icon": "",
+        "internal_tags_list": [],
+        "internal_tag_ids": [],
+        "content_type_asset_preview": null,
+        "metadata": {}
+      },
+      "after": {
+        "id": 1,
+        "created_at": "",
+        "updated_at": "",
+        "is_root": true,
+        "is_nestable": false,
+        "name": "home",
+        "display_name": "Startsida",
+        "schema": {
+          "introduction": {
+            "type": "textarea",
+            "display_name": "Kort text om ÖFC",
+            "pos": 0
+          },
+          "venue_image": {
+            "type": "asset",
+            "filetypes": [
+              "images"
+            ],
+            "display_name": "Bild av utställningsrummet",
+            "pos": 1
+          }
+        }
+      }
+    }
+  ]
+}

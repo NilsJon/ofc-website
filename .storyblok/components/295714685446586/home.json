@@ -1,0 +1,24 @@
+{
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": true,
+  "is_nestable": false,
+  "name": "home",
+  "display_name": "Startsida",
+  "schema": {
+    "introduction": {
+      "type": "textarea",
+      "display_name": "Kort text om ÖFC",
+      "pos": 0
+    },
+    "venue_image": {
+      "type": "asset",
+      "filetypes": [
+        "images"
+      ],
+      "display_name": "Bild av utställningsrummet",
+      "pos": 1
+    }
+  }
+}

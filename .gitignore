@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+!.env.example
+.storyblok/changesets/
+.storyblok/reports/
+.storyblok/logs/
+.idea/

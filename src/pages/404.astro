@@ -1,0 +1,6 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getSettings } from '../lib/content';
+const settings = await getSettings();
+---
+<BaseLayout title="Sidan finns inte" description="Sidan kunde inte hittas." settings={settings}><div class="shell page-heading spacer-bottom"><p class="eyebrow">404</p><h1>Sidan finns inte.</h1><p><a class="text-link" href="/">Till startsidan ↗</a></p></div></BaseLayout>

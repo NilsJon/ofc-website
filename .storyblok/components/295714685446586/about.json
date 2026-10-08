@@ -1,0 +1,34 @@
+{
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": true,
+  "is_nestable": false,
+  "name": "about",
+  "display_name": "Om ÖFC",
+  "schema": {
+    "introduction": {
+      "type": "textarea",
+      "display_name": "Introduktion",
+      "pos": 0
+    },
+    "background": {
+      "type": "richtext",
+      "display_name": "Om fotograficentrumet",
+      "pos": 1
+    },
+    "building": {
+      "type": "richtext",
+      "display_name": "Om Sädesmagasinet",
+      "pos": 2
+    },
+    "image": {
+      "type": "asset",
+      "filetypes": [
+        "images"
+      ],
+      "display_name": "Bild av magasinet",
+      "pos": 3
+    }
+  }
+}

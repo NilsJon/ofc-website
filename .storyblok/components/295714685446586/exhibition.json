@@ -1,0 +1,78 @@
+{
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": true,
+  "is_nestable": false,
+  "name": "exhibition",
+  "display_name": "Utställning",
+  "schema": {
+    "title": {
+      "type": "text",
+      "required": true,
+      "display_name": "Utställningens titel",
+      "pos": 0
+    },
+    "artists": {
+      "type": "text",
+      "required": true,
+      "display_name": "Fotograf(er) / konstnär(er)",
+      "pos": 1
+    },
+    "start_date": {
+      "type": "datetime",
+      "required": true,
+      "display_name": "Startdatum",
+      "pos": 2
+    },
+    "end_date": {
+      "type": "datetime",
+      "required": true,
+      "display_name": "Slutdatum",
+      "pos": 3
+    },
+    "opening_date": {
+      "type": "datetime",
+      "display_name": "Vernissage (valfritt)",
+      "pos": 4
+    },
+    "summary": {
+      "type": "textarea",
+      "display_name": "Kort introduktion",
+      "pos": 5
+    },
+    "body": {
+      "type": "richtext",
+      "display_name": "Om utställningen",
+      "pos": 6
+    },
+    "hero_image": {
+      "type": "asset",
+      "filetypes": [
+        "images"
+      ],
+      "display_name": "Huvudbild",
+      "pos": 7
+    },
+    "image_credit": {
+      "type": "text",
+      "display_name": "Fotograf / bildrättighet för huvudbild",
+      "pos": 8
+    },
+    "gallery": {
+      "type": "bloks",
+      "display_name": "Fler bilder",
+      "pos": 9,
+      "component_whitelist": [
+        "gallery_image"
+      ],
+      "restrict_components": true,
+      "restrict_type": ""
+    },
+    "external_url": {
+      "type": "text",
+      "display_name": "Extern länk (valfritt)",
+      "pos": 10
+    }
+  }
+}

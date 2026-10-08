@@ -1,0 +1,30 @@
+{
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": false,
+  "is_nestable": true,
+  "name": "gallery_image",
+  "display_name": "Bild i galleri",
+  "schema": {
+    "image": {
+      "type": "asset",
+      "filetypes": [
+        "images"
+      ],
+      "required": true,
+      "display_name": "Bild",
+      "pos": 0
+    },
+    "caption": {
+      "type": "text",
+      "display_name": "Bildtext",
+      "pos": 1
+    },
+    "credit": {
+      "type": "text",
+      "display_name": "Fotograf / bildrättighet",
+      "pos": 2
+    }
+  }
+}

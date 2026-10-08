@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://xn--fc-eka.se/sitemap-index.xml
