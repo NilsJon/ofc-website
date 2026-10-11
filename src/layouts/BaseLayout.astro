@@ -1,23 +1,20 @@
 ---
 import '../styles/global.css';
-import type { SiteSettings } from '../lib/content';
+import { site } from '../lib/temporary-site';
 
 interface Props {
   title: string;
   description: string;
-  settings: SiteSettings;
   image?: string;
 }
 
-const { title, description, settings, image } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://xn--fc-eka.se/');
-const fullTitle = title === 'Österlens Fotograficentrum' ? title : `${title} | Österlens Fotograficentrum`;
+const { title, description, image } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://ofc-website.nils-stridbeck.workers.dev/');
+const fullTitle = title === site.name ? title : `${title} | ${site.name}`;
 const nav = [
-  ['/', 'Aktuellt'],
-  ['/utstallningar/', 'Utställningar'],
-  ['/arkiv/', 'Arkiv'],
-  ['/om-ofc/', 'Om ÖFC'],
-  ['/besok/', 'Besök oss'],
+  ['/', 'Start'],
+  ['/foreningen/', 'Föreningen'],
+  ['/magasinen/', 'Magasinen'],
 ];
 ---
 
@@ -28,6 +25,7 @@ const nav = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f5f3ef" />
     <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow" />
     <link rel="canonical" href={canonical.href} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta property="og:type" content="website" />
@@ -42,7 +40,7 @@ const nav = [
     <a class="skip-link" href="#main">Hoppa till innehåll</a>
     <header class="site-header">
       <div class="shell header-inner">
-        <a class="wordmark" href="/" aria-label="Österlens Fotograficentrum, startsida"><span>Ö<span class="wordmark-dot">·</span>FC</span><small>Österlens<br />Fotograficentrum</small></a>
+        <a class="wordmark" href="/" aria-label={`${site.name}, startsida`}><span class="station-wordmark">Station</span><small>Smedstorp</small></a>
         <nav class="desktop-nav" aria-label="Huvudmeny">
           {nav.map(([href, label]) => <a href={href} aria-current={Astro.url.pathname === href ? 'page' : undefined}>{label}</a>)}
         </nav>
@@ -54,12 +52,11 @@ const nav = [
     </header>
     <main id="main"><slot /></main>
     <footer class="site-footer">
-      <div class="shell footer-grid">
-        <div><p class="eyebrow">ÖFC / Smedstorp</p><p class="footer-statement">En plats för fotografi<br />på Österlen.</p></div>
-        <div><p class="eyebrow">Besök</p><p>{settings.address}</p><a href="/besok/">Hitta hit ↗</a></div>
-        <div><p class="eyebrow">Kontakt</p><p><a href={`mailto:${settings.email}`}>{settings.email}</a><br /><a href={`tel:${settings.phone?.replace(/\s/g, '')}`}>{settings.phone}</a></p>{settings.instagram_url && <a href={settings.instagram_url} target="_blank" rel="noopener noreferrer">Instagram ↗</a>}</div>
+      <div class="shell footer-grid temporary-footer">
+        <div><p class="eyebrow">Smedstorp / Österlen</p><p class="footer-statement">En mötesplats<br />tar form.</p></div>
+        <div><p class="eyebrow">Station Smedstorp</p><p>För mat, kultur och konst i Smedstorp.</p><a href="/foreningen/">Om föreningen ↗</a></div>
       </div>
-      <div class="shell footer-bottom"><span>© {new Date().getFullYear()} Österlens Fotograficentrum</span><span>Fotografi i Smedstorps Sädesmagasin</span></div>
+      <div class="shell footer-bottom"><span>© {new Date().getFullYear()} {site.name}</span><span>Magasinsbyggnaderna i Smedstorp</span></div>
     </footer>
   </body>
 </html>

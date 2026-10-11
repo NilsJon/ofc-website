@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../lib/temporary-site';
+---
+
+<BaseLayout title="Föreningen" description="Om föreningens arbete för magasinsbyggnaderna i Smedstorp och en hållbar mötesplats för mat, kultur och konst.">
+  <div class="shell page-heading"><p class="eyebrow">Vårt ändamål</p><h1>Föreningen</h1><p>Vi verkar för att magasinsbyggnaderna i Smedstorp ska tas till vara, varsamt renoveras och utvecklas.</p></div>
+  <div class="shell spacer-bottom">
+    <section class="section intro-grid"><div><p class="eyebrow">En gemensam plats</p><p class="lead">En hållbar mötesplats där olika verksamheter kan mötas.</p></div><div><p>Föreningens mål är att skapa förutsättningar för små och medelstora företag och organisationer. Mat, kultur och konst är områden där nya samarbeten och verksamheter ska kunna växa fram.</p><a class="text-link" href="/magasinen/">Om byggnaderna ↗</a></div></section>
+    <section class="section"><div class="section-heading"><h2>Föreningens ändamål</h2></div><p class="purpose-text">{site.purpose}</p></section>
+  </div>
+</BaseLayout>

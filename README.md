@@ -1,4 +1,14 @@
-# Österlens Fotograficentrum
+# Station Smedstorp — temporary site
+
+The public site currently presents **Station Smedstorp**, a proposed meeting place centred on the historic warehouse buildings. Its pages are `/`, `/foreningen/` and `/magasinen/`. No contact details or opening hours are published in this version. The supplied Swedish purpose statement is kept verbatim in [`src/lib/temporary-site.ts`](src/lib/temporary-site.ts); the surrounding copy is a concise summary of that statement.
+
+The previous ÖFC site is saved in Git tag `ofc-original-2026-10-11`. The Storyblok space, schema, and draft content have not been changed. The temporary pages read no Storyblok content, so publishing an old ÖFC draft cannot put exhibition copy onto this site. To restore ÖFC later, revert the temporary-site commit on `main` and push; the tag provides an exact reference for the prior version.
+
+The shareable deployment is currently the Git-connected [Cloudflare Worker](https://ofc-website.nils-stridbeck.workers.dev/). The temporary build uses this URL for metadata and is marked `noindex`. The original ÖFC setup notes below remain for restoration work.
+
+---
+
+# Österlens Fotograficentrum (original site notes)
 
 An Astro website for ÖFC. The public build is static. Storyblok holds structured exhibition, About and visit content; page layout stays in code so an editor can update content without changing the design.
 

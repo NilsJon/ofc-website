@@ -1,35 +1,21 @@
 ---
-import { getPayload, storyblokEditable } from '@storyblok/astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ExhibitionCard from '../components/ExhibitionCard.astro';
-import { classifyExhibition, formatDateRange, getExhibitions, getSettings, getStory, imageSrcset, imageUrl, sortExhibitions, type CmsStory } from '../lib/content';
-
-interface HomeContent { component: 'home'; _uid?: string; _editable?: string; introduction?: string; venue_image?: import('../lib/content').ImageAsset; }
-const payload = import.meta.env.STORYBLOK_PREVIEW === '1' ? await getPayload({ locals: Astro.locals }) : null;
-const home = (payload?.story as CmsStory<HomeContent> | undefined) ?? await getStory<HomeContent>('home');
-const settings = await getSettings();
-const exhibitions = sortExhibitions(await getExhibitions());
-const current = exhibitions.find((story) => classifyExhibition(story.content) === 'current');
-const upcoming = exhibitions.filter((story) => classifyExhibition(story.content) === 'upcoming').reverse().slice(0, 2);
-const heroAsset = current?.content.hero_image ?? home?.content.venue_image;
-const heroImage = imageUrl(heroAsset, 1800) ?? '/images/osterlen-current-site.jpg';
-const description = current ? `${current.content.title} på Österlens Fotograficentrum i Smedstorp. ${formatDateRange(current.content.start_date, current.content.end_date) ?? ''}` : 'Österlens Fotograficentrum är en plats för fotografi i Smedstorps Sädesmagasin på Österlen.';
+import { site } from '../lib/temporary-site';
 ---
-<BaseLayout title="Österlens Fotograficentrum" description={description} settings={settings} image={heroImage}>
-  {settings.announcement && <div class="announcement"><div class="shell">{settings.announcement}</div></div>}
-  <section class="hero" {...(home?.content ? storyblokEditable(home.content) : {})}>
-    <div class:list={['hero-image', { 'is-artwork': Boolean(current?.content.hero_image?.filename) }]}><img src={heroImage} srcset={imageSrcset(heroAsset)} sizes="(max-width: 900px) 100vw, 54vw" width={heroAsset?.width ?? 1536} height={heroAsset?.height ?? 2048} alt={heroAsset?.alt ?? 'Utställningsrummet i Smedstorps Sädesmagasin'} fetchpriority="high" /></div>
+
+<BaseLayout title={site.name} description="Föreningen verkar för att bevara och utveckla magasinsbyggnaderna i Smedstorp till en hållbar mötesplats för mat, kultur och konst." image="/images/osterlen-current-site.jpg">
+  <section class="hero">
+    <div class="hero-image"><img src="/images/osterlen-current-site.jpg" width="1536" height="2048" alt="Interiör i Smedstorps Sädesmagasin" fetchpriority="high" /></div>
     <div class="hero-copy">
-      <div><p class="eyebrow">Österlens Fotograficentrum / Smedstorp</p>{current ? <><h1>{current.content.title}</h1><p class="lead">{current.content.artists}</p><p>{formatDateRange(current.content.start_date, current.content.end_date)}</p><p>{current.content.summary}</p></> : <><h1>En plats för fotografi på Österlen.</h1><p>Se, upplev och samtala om fotografi i Smedstorps Sädesmagasin.</p></>}</div>
-      <div>{current ? <a class="hero-link" href={`/utstallningar/${current.slug}/`}>Se utställningen ↗</a> : <a class="hero-link" href="/utstallningar/">Utforska utställningar ↗</a>}</div>
+      <div><p class="eyebrow">Station Smedstorp / Österlen</p><h1>En mötesplats tar form.</h1><p>Vi vill ta vara på magasinsbyggnaderna i Smedstorp och utveckla dem varsamt för framtiden.</p></div>
+      <a class="hero-link" href="/foreningen/">Läs om föreningen ↗</a>
     </div>
   </section>
   <div class="shell info-strip">
-    <div><p class="eyebrow">Just nu</p><p>{current ? `${current.content.title} · ${formatDateRange(current.content.start_date, current.content.end_date)}` : 'Ingen aktuell utställning med publicerade datum.'}</p></div>
-    <div><p class="eyebrow">Öppettider</p><p>{settings.opening_hours || 'Aktuella öppettider publiceras här när de har bekräftats.'}</p></div>
-    <div><p class="eyebrow">Hitta hit</p><p>{settings.address}</p></div>
+    <div><p class="eyebrow">Platsen</p><p>Magasinsbyggnaderna i Smedstorp</p></div>
+    <div><p class="eyebrow">Inriktning</p><p>Mat · Kultur · Konst</p></div>
+    <div><p class="eyebrow">Målet</p><p>En hållbar mötesplats för företag och organisationer</p></div>
   </div>
-  {upcoming.length > 0 && <section class="shell section"><div class="section-heading"><h2>På gång</h2><a href="/utstallningar/">Alla utställningar ↗</a></div><div class="exhibition-grid">{upcoming.map((story) => <ExhibitionCard story={story} label="Kommande" />)}</div></section>}
-  <section class="shell section intro-grid"><div><p class="eyebrow">Om platsen</p><p class="lead">Fotografi behöver en plats där vi kan stanna upp och se närmare.</p></div><div><p>{home?.content.introduction ?? 'Här på Österlen har vi utvecklat en plats för fotografi där du kan se, uppleva och ta del av fotografi och samtidigt möta fotograferna bakom bilderna.'}</p><p>ÖFC finns i Smedstorps Sädesmagasin, en bruksbyggnad från slutet av 1800-talet mitt på Österlen.</p><a class="text-link" href="/om-ofc/">Läs om ÖFC ↗</a></div></section>
-  <section class="shell section"><div class="section-heading"><h2>Besök oss</h2><a href="/besok/">Planera ditt besök ↗</a></div><p class="lead">Välkommen till Smedstorps Sädesmagasin.</p><p>{settings.address}</p></section>
+  <section class="shell section intro-grid"><div><p class="eyebrow">Vår idé</p><p class="lead">Varsam renovering. Nya möjligheter.</p></div><div><p>Föreningen arbetar för att byggnaderna ska tas till vara, renoveras och utvecklas till en plats där olika verksamheter kan mötas.</p><p>Här vill vi skapa utrymme för innovationer och verksamhet kring mat, kultur och konst.</p><a class="text-link" href="/foreningen/">Föreningens ändamål ↗</a></div></section>
+  <section class="shell section"><div class="section-heading"><h2>Magasinen</h2><a href="/magasinen/">Läs mer ↗</a></div><p class="lead">En del av Smedstorps historia, med plats för en ny framtid.</p></section>
 </BaseLayout>
