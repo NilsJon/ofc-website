@@ -11,6 +11,11 @@
 .hero-image.is-artwork img{object-fit:contain}
 .wordmark small{max-width:150px}
 .purpose-text{max-width:900px;font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(1.3rem,2.3vw,2.2rem);line-height:1.65;letter-spacing:-.025em}
-.wordmark .station-wordmark{font-size:clamp(1.4rem,2.5vw,2.25rem);letter-spacing:-.06em}
+.wordmark .station-wordmark{font-size:clamp(1.35rem,2.5vw,2.25rem);letter-spacing:-.06em;line-height:1.06}
 .temporary-footer{grid-template-columns:2fr 1fr}
 @media(max-width:640px){.temporary-footer{grid-template-columns:1fr}}
+.footer-identity{border-top:1px solid #606a60;margin-top:58px;padding-top:24px}
+.footer-identity p{max-width:1020px;margin:0;line-height:1.75;color:#d6ddd2;font-size:.9rem}
+.footer-identity strong{color:#f5f3ef;font-weight:600}
+.temporary-footer a[href^="mailto:"]{text-decoration:underline;text-underline-offset:.25em}
+.footer-identity+.footer-bottom{margin-top:50px}
