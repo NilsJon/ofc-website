@@ -11,9 +11,12 @@
 .hero-image.is-artwork img{object-fit:contain}
 .wordmark small{max-width:150px}
 .purpose-text{max-width:900px;font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(1.3rem,2.3vw,2.2rem);line-height:1.65;letter-spacing:-.025em}
-.wordmark .station-wordmark{font-size:clamp(1.35rem,2.5vw,2.25rem);letter-spacing:-.06em;line-height:1.06}
+.wordmark .station-wordmark{font-size:clamp(1.35rem,2.5vw,2.25rem);letter-spacing:-.06em;line-height:1.06;white-space:nowrap}
 .temporary-footer{grid-template-columns:2fr 1fr}
 @media(max-width:640px){.temporary-footer{grid-template-columns:1fr}}
+.header-logo{display:flex;justify-content:center;align-items:center;background:#f7f7f7;border-top:1px solid #e8e8e5;padding:14px 24px 18px}
+.header-logo img{width:clamp(115px,12vw,165px);height:auto}
+@media(max-width:640px){.header-inner{gap:12px}.wordmark .station-wordmark{font-size:clamp(1rem,4vw,1.4rem)}.header-logo{padding:10px 18px 14px}.header-logo img{width:120px}}
 .footer-identity{border-top:1px solid #606a60;margin-top:58px;padding-top:24px}
 .footer-identity p{max-width:1020px;margin:0;line-height:1.75;color:#d6ddd2;font-size:.9rem}
 .footer-identity strong{color:#f5f3ef;font-weight:600}
