@@ -27,7 +27,7 @@ const nav = [
     <meta name="description" content={description} />
     <meta name="robots" content="noindex, nofollow" />
     <link rel="canonical" href={canonical.href} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="sv_SE" />
     <meta property="og:title" content={fullTitle} />
@@ -41,6 +41,7 @@ const nav = [
     <header class="site-header">
       <div class="shell header-inner">
         <a class="wordmark" href="/" aria-label={`${site.name}, startsida`}><span class="station-wordmark">STATION SMEDSTORP</span></a>
+        <img class="header-logo" src="/favicon.png" width="1377" height="1142" alt="Station Smedstorps logotyp" />
         <nav class="desktop-nav" aria-label="Huvudmeny">
           {nav.map(([href, label]) => <a href={href} aria-current={Astro.url.pathname === href ? 'page' : undefined}>{label}</a>)}
         </nav>
@@ -48,9 +49,6 @@ const nav = [
           <summary>Meny <span aria-hidden="true">☰</span></summary>
           <nav aria-label="Mobilmeny">{nav.map(([href, label]) => <a href={href} aria-current={Astro.url.pathname === href ? 'page' : undefined}>{label}</a>)}</nav>
         </details>
-      </div>
-      <div class="header-logo">
-        <img src="/images/station-smedstorp-logo.jpeg" width="5160" height="4280" alt="Station Smedstorps logotyp" />
       </div>
     </header>
     <main id="main"><slot /></main>
