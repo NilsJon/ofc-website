@@ -11,7 +11,7 @@ const preview = process.env.STORYBLOK_PREVIEW === '1';
 const accessToken = preview ? env.STORYBLOK_PREVIEW_DELIVERY_API_TOKEN : env.STORYBLOK_DELIVERY_API_TOKEN;
 
 export default defineConfig({
-  site: 'https://ofc-website.nils-stridbeck.workers.dev',
+  site: 'https://xn--fc-eka.se',
   output: preview ? 'server' : 'static',
   ...(preview ? { adapter: node({ mode: 'standalone' }) } : {}),
   integrations: [
@@ -23,13 +23,9 @@ export default defineConfig({
     sitemap(),
   ],
   redirects: {
-    '/om-oss/': '/foreningen/',
-    '/om-ofc/': '/foreningen/',
-    '/besok/': '/foreningen/',
-    '/kontakt/': '/foreningen/',
-    '/utstallningar/': '/',
-    '/arkiv/': '/magasinen/',
-    '/lankar/': '/foreningen/',
+    '/om-oss/': '/om-ofc/',
+    '/kontakt/': '/besok/',
+    '/lankar/': '/om-ofc/',
   },
   vite: { plugins: preview ? [basicSsl()] : [] },
 });

@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPayload, storyblokEditable } from '@storyblok/astro';
+import { getSettings, type CmsStory, type SiteSettings } from '../../lib/content';
+const payload = import.meta.env.STORYBLOK_PREVIEW === '1' ? await getPayload({ locals: Astro.locals }) : null;
+const settings = (payload?.story as CmsStory<SiteSettings> | undefined)?.content ?? await getSettings();
+---
+<BaseLayout title="Besök oss" description="Adress, kontakt och besöksinformation för Österlens Fotograficentrum i Smedstorp." settings={settings}>
+  <div class="shell page-heading"><p class="eyebrow">Välkommen hit</p><h1>Besök oss</h1><p>Österlens Fotograficentrum finns i Smedstorps Sädesmagasin, mitt på Österlen.</p></div>
+  <div class="shell visit-grid spacer-bottom" {...storyblokEditable(settings)}><section><p class="eyebrow">Hitta hit</p><h2>{settings.address}</h2>{settings.map_url && <p><a href={settings.map_url} target="_blank" rel="noopener noreferrer">Visa på karta ↗</a></p>}<p class="note">Kontrollera öppettiderna inför ditt besök.</p></section><section><p class="eyebrow">Öppettider</p><h2>{settings.opening_hours || 'Öppettider kommer'}</h2>{!settings.opening_hours && <p>Aktuella öppettider är ännu inte bekräftade för den nya webbplatsen.</p>}<p class="eyebrow" style="margin-top:52px">Kontakt</p><p><a href={`mailto:${settings.email}`}>{settings.email}</a><br /><a href={`tel:${settings.phone?.replace(/\s/g, '')}`}>{settings.phone}</a></p></section></div>
+</BaseLayout>
